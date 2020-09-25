@@ -1,6 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:layouts/models/IPokemon.dart';
-import 'package:layouts/models/result.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'api_client.g.dart';
