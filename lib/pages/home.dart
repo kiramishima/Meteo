@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meteo/app.router.dart';
-import 'package:meteo/pages/secret.dart';
+// import 'package:meteo/pages/secret.dart';
 import 'package:sailor/sailor.dart';
 
 class HomePage extends StatefulWidget {

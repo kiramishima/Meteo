@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:meteo/app.router.dart';
 import 'package:meteo/models/weather.dart';
-import 'package:meteo/pages/home.dart';
+// import 'package:meteo/pages/home.dart';
+import 'package:meteo/pages/main.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -23,7 +24,7 @@ class App extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: HomePage(title: 'Flutter Demo Home Page'),
+        home: MainPage(title: 'Weather App'),
         navigatorKey: Routes.sailor.navigatorKey,
         onGenerateRoute: Routes.sailor.generator(),
       ),
