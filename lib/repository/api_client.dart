@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:meteo/models/CurrentWeatherResponse.dart';
 import 'package:retrofit/retrofit.dart';

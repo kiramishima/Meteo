@@ -4,7 +4,7 @@ import 'package:meteo/models/CurrentWeatherResponse.dart';
 import 'package:provider/provider.dart';
 
 class Weather extends ChangeNotifier {
-  CurrentWeatherResponse data;
+  CurrentWeatherResponse data = null;
   bool get hasData => data != null ? true : false;
 
   static Weather of(BuildContext context, {bool listen = false}) =>
