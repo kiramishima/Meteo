@@ -36,6 +36,7 @@ dependencies:
   dartz: any
   flutter_search_bar: ^2.1.0
   sprintf: ^5.0.0
+  expandable_bottom_bar: ^1.0.2
   cupertino_icons: ^1.0.0
 
 dev_dependencies:

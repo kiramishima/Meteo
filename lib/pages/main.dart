@@ -9,7 +9,7 @@ import 'package:meteo/utils/Constants.dart';
 import 'package:meteo/widgets/current_weather_box.dart';
 import 'package:meteo/widgets/forecast_item_card.dart';
 import 'package:provider/provider.dart';
-import 'package:sprintf/sprintf.dart';
+import 'package:expandable_bottom_bar/expandable_bottom_bar.dart';
 
 class MainPage extends StatefulWidget {
   final String title;
@@ -21,6 +21,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin {
   final String defaultLang = "en";
+  BottomBarController bbc;
   final apiClient = new APIClient(Dio(), baseUrl: Constants.BASE_URL);
   CurrentWeatherResponse currentWeather = null;
 
@@ -46,6 +47,8 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
   @override
   void initState() {
     super.initState();
+
+    bbc = BottomBarController(vsync: this, dragLength: 570, snap: true);
   }
 
   SearchBar searchBar;
@@ -68,6 +71,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
         onSubmitted: print,
         buildDefaultAppBar: buildAppBar
     );
+
   }
 
   @override
@@ -106,12 +110,40 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
                 ),
               ),
             ),
-            Expanded(
-              flex: 1,
-              child: Container(color: Colors.blue,),
-            ),
             // model.data != null ?  new CurrentWeatherBox(temp: model.data.main.temp) : Center(child: CircularProgressIndicator(),),
           ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: GestureDetector(
+        // Set onVerticalDrag event to drag handlers of controller for swipe effect
+        onVerticalDragUpdate: bbc.onDrag,
+        onVerticalDragEnd: bbc.onDragEnd,
+        child: FloatingActionButton.extended(
+          label: Text("Next 15 Days"),
+          elevation: 0,
+          backgroundColor: Colors.deepPurpleAccent,
+          foregroundColor: Colors.white,
+
+          //Set onPressed event to swap state of bottom bar
+          onPressed: () => bbc.swap(),
+        ),
+      ),
+      bottomNavigationBar: BottomExpandableAppBar(
+        // Provide the bar controller in build method or default controller as ancestor in a tree
+        controller: bbc,
+        expandedHeight: 570,
+        expandedBackColor: Theme.of(context).backgroundColor,
+        // Your bottom sheet code here
+        expandedBody: Center(
+          child: Text("Hello world!"),
+        ),
+        // Your bottom app bar code here
+        bottomAppBarBody: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+          ),
         ),
       ),
     );
