@@ -5,14 +5,20 @@ class ForecastItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0.0,
+    return SingleChildScrollView(
+      padding: EdgeInsets.only(right: 5, left: 5),
+      // elevation: 0.0,
       // margin: EdgeInsets.symmetric(horizontal: 15.0),
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0)
-      ),
-      color: Colors.tealAccent,
+      // shape: RoundedRectangleBorder(
+      //    borderRadius: BorderRadius.circular(30.0)
+      //),
+      //color: Colors.tealAccent,
       child: Container(
+
+        decoration: BoxDecoration(
+          color: Colors.tealAccent,
+          borderRadius: BorderRadius.circular(30.0),
+        ),
         padding: EdgeInsets.only(top: 20.0),
         width: 150.0,
         child: Column(
@@ -25,17 +31,19 @@ class ForecastItemCard extends StatelessWidget {
             SizedBox(height: 5.0,),
             Row(
               mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Expanded(
                   flex: 1,
                   child: Container(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Icon(
                           Icons.keyboard_arrow_up,
                           size: 30.0,
                         ),
-                        Text("11°", style: TextStyle(fontSize: 18.0),)
+                        Text("11°", style: TextStyle(fontSize: 25.0),),
                       ],
                     ),
                   ),
@@ -44,12 +52,13 @@ class ForecastItemCard extends StatelessWidget {
                   flex: 1,
                   child: Container(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Icon(
                           Icons.keyboard_arrow_down,
                           size: 30.0,
                         ),
-                        Text("11°", style: TextStyle(fontSize: 18.0),)
+                        Text("75°", style: TextStyle(fontSize: 25.0),)
                       ],
                     ),
                   ),

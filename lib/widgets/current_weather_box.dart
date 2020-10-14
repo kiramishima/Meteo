@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class CurrentWeatherBox extends StatelessWidget {
   final double temp;
+  final sc = ScrollController();
   CurrentWeatherBox({this.temp});
 
   @override
@@ -9,14 +10,14 @@ class CurrentWeatherBox extends StatelessWidget {
     // String Temp = sprintf("%.0f°", temp);
     return Expanded(
         flex: 3,
-        child: Card(
-          elevation: 15.0,
-          // margin: EdgeInsets.symmetric(horizontal: 15.0),
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0)
-          ),
-          color: Colors.indigo,
+        child: SingleChildScrollView(
+          controller: sc,
+          scrollDirection: Axis.vertical,
           child: Container(
+            decoration: BoxDecoration(
+              color: Colors.indigo,
+              borderRadius: BorderRadius.circular(30.0),
+            ),
             width: MediaQuery.of(context).size.width - 25,
             child: Column(
                 mainAxisSize: MainAxisSize.max,

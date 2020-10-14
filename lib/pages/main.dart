@@ -99,10 +99,13 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
 
             Expanded(
               flex: 4,
-              child: Container(
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                controller: new ScrollController(),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
                   children: <Widget>[
+                    ForecastItemCard(),
                     ForecastItemCard(),
                     ForecastItemCard(),
                     ForecastItemCard(),
