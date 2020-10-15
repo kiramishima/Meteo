@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:meteo/models/CurrentWeatherResponse.dart';
+import 'file:///E:/Workspace/ws_flutter/meteo/lib/models/currentweather/CurrentWeatherResponse.dart';
 import 'package:provider/provider.dart';
 
 class Weather extends ChangeNotifier {

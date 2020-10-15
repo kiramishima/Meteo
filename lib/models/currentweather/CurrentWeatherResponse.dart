@@ -1,11 +1,11 @@
 
 import 'package:json_annotation/json_annotation.dart';
-import 'package:meteo/models/Clouds.dart';
-import 'package:meteo/models/Coord.dart';
-import 'package:meteo/models/Main.dart';
-import 'package:meteo/models/Sys.dart';
-import 'package:meteo/models/WeatherItem.dart';
-import 'package:meteo/models/Wind.dart';
+import 'package:meteo/models/common/Clouds.dart';
+import 'package:meteo/models/common/Coord.dart';
+import 'package:meteo/models/currentweather/Main.dart';
+import 'package:meteo/models/currentweather/Sys.dart';
+import 'package:meteo/models/common/WeatherItem.dart';
+import 'package:meteo/models/common/Wind.dart';
 
 part 'CurrentWeatherResponse.g.dart';
 

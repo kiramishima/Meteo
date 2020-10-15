@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:meteo/models/Coord.dart';
+import 'package:meteo/models/common/Coord.dart';
 
 part 'City.g.dart';
 

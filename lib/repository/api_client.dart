@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:meteo/models/CurrentWeatherResponse.dart';
-import 'package:meteo/models/FiveDayResponse.dart';
+import 'package:meteo/models/currentweather/CurrentWeatherResponse.dart';
+import 'package:meteo/models/fivedayweather/FiveDayResponse.dart';
 import 'package:meteo/models/daysweather/MultipleDaysWeatherResponse.dart';
 import 'package:retrofit/retrofit.dart';
 

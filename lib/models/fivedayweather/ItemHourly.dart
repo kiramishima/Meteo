@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:meteo/models/Clouds.dart';
-import 'package:meteo/models/WeatherItem.dart';
-import 'package:meteo/models/Wind.dart';
+import 'package:meteo/models/common/Clouds.dart';
+import 'package:meteo/models/common/WeatherItem.dart';
+import 'package:meteo/models/common/Wind.dart';
 import 'package:meteo/models/fivedayweather/Main.dart';
 import 'package:meteo/models/fivedayweather/Rain.dart';
 import 'package:meteo/models/fivedayweather/Sys.dart';

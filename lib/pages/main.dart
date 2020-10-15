@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart' as dartz;
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_search_bar/flutter_search_bar.dart';
-import 'package:meteo/models/CurrentWeatherResponse.dart';
+import 'package:meteo/models/currentweather/CurrentWeatherResponse.dart';
 import 'package:meteo/models/weather.dart';
 import 'package:meteo/repository/api_client.dart';
 import 'package:meteo/utils/Constants.dart';
