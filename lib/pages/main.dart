@@ -1,6 +1,8 @@
 import 'package:dartz/dartz.dart' as dartz;
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_search_bar/flutter_search_bar.dart';
 import 'package:meteo/models/currentweather/CurrentWeatherResponse.dart';
 import 'package:meteo/models/weather.dart';
@@ -31,7 +33,8 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
     final cityName = "Mexico City";
     if (!model.hasData) {
       try {
-        model.setData(await apiClient.getCurrentWeather(cityName, Constants.UNITS, defaultLang, apiKey));
+        await apiClient.getCurrentWeather(cityName, Constants.UNITS, defaultLang, apiKey);
+        // model.setData(await apiClient.getCurrentWeather(cityName, Constants.UNITS, defaultLang, apiKey));
       }
       on Exception catch (ex) {
         print("ex: ${ex}");
@@ -54,6 +57,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
   SearchBar searchBar;
 
   AppBar buildAppBar(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
     Weather model = Weather.of(context, listen: true);
     return new AppBar(
       centerTitle: true,
@@ -86,11 +90,13 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
             Text("Current",
               style: TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.bold, fontSize: 20.0),
               textAlign: TextAlign.center,),
+            Padding(padding: EdgeInsets.only(bottom: 12)),
             CurrentWeatherBox(temp: 30.0,),
             Expanded(
+              flex: 1,
               child: Container(
                 alignment: Alignment.topLeft,
-                margin: EdgeInsets.only(left: 15.0, top: 15.0),
+                margin: EdgeInsets.only(left: 20.0, top: 15.0),
                 child: Text("Next 4 Days/Hourly",
                   style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25.0),
                   textAlign: TextAlign.start,),

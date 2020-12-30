@@ -9,7 +9,7 @@ class CurrentWeatherBox extends StatelessWidget {
   Widget build(BuildContext context) {
     // String Temp = sprintf("%.0f°", temp);
     return Expanded(
-        flex: 3,
+        flex: 4,
         child: SingleChildScrollView(
           controller: sc,
           scrollDirection: Axis.vertical,
@@ -19,6 +19,7 @@ class CurrentWeatherBox extends StatelessWidget {
               borderRadius: BorderRadius.circular(30.0),
             ),
             width: MediaQuery.of(context).size.width - 25,
+            height: MediaQuery.of(context).size.height/3,
             child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
